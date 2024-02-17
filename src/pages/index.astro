@@ -1,0 +1,37 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Badge from '../components/Badge.astro'
+const linkedIn = "https://www.linkedin.com/in/federico-segundo-molina-roldan-256191159/";
+---
+
+<Layout title="Welcome to Astro.">
+	<main>
+		<section class="w-full lg:w-[740px] mx-auto py-44 ">
+			<!--[clip-path:polygon(0%_0%,_100%_0%,_99%_80%,_76%_80%,_75%_100%,_50%_80%,_0_80%)] -->
+			<img 
+			class="rounded-full w-24 mb-4"
+			src="/img/photo.jpg" 
+			alt="" /
+			>
+			<h1 class="text-white text-5xl font-bold flex flex-row gap-x-4 pb-10"
+				>Hey, Soy Ainus64 <a 
+					href={linkedIn} 
+					target="_blank"
+					rel="noopener"
+					class="flex justify-center items-center"
+					>
+					<Badge>Disponible para trabajar</Badge>
+				<a/>
+			</h1>
+
+			<h2 class=""
+				>+15 años de experiencia con GNU/Linux demostrable, Iniciando como desarrollador Web Junior. De Jerez de la Frontera, Cádiz, España.
+			</h2>
+
+			<ul>
+
+			</ul>
+		</section>
+	</main>
+</Layout>
+
