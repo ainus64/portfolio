@@ -1,20 +1,29 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Badge from '../components/Badge.astro'
-const linkedIn = "https://www.linkedin.com/in/federico-segundo-molina-roldan-256191159/";
+import Badge from '../components/Badge.astro';
+import SocialPill from '../components/SocialPill.astro';
+import LinkedInIcon from '../components/icons/Linkedin.astro';
+import GithubIcon from '../components/icons/Github.astro';
+const linkedIn = "";
+const userName = "Fede";
+const yearInit = 2006;
+const actualYear = 2024;
+
+const yearExp = actualYear - yearInit;
+
 ---
 
 <Layout title="Welcome to Astro.">
 	<main>
-		<section class="w-full lg:w-[740px] mx-auto py-44 ">
+		<section class="w-full lg:w-[740px] mx-auto py-44 text-white">
 			<!--[clip-path:polygon(0%_0%,_100%_0%,_99%_80%,_76%_80%,_75%_100%,_50%_80%,_0_80%)] -->
 			<img 
 			class="rounded-full w-24 mb-4"
 			src="/img/photo.jpg" 
 			alt="" /
 			>
-			<h1 class="text-white text-5xl font-bold flex flex-row gap-x-4 pb-10"
-				>Hey, Soy Ainus64 <a 
+			<h1 class="text-5xl font-bold flex flex-row gap-x-4 pb-10"
+				>Hey, soy {userName} <a 
 					href={linkedIn} 
 					target="_blank"
 					rel="noopener"
@@ -24,13 +33,20 @@ const linkedIn = "https://www.linkedin.com/in/federico-segundo-molina-roldan-256
 				<a/>
 			</h1>
 
-			<h2 class=""
-				>+15 años de experiencia con GNU/Linux demostrable, Iniciando como desarrollador Web Junior. De Jerez de la Frontera, Cádiz, España.
+			<h2 class="text-2xl text-wrap">
+				<span>Tengo {yearExp} años de experiencia con GNU/Linux demostrable.</span> <span>Iniciando como desarrollador Web Junior.</span><span> De Jerez de la Frontera, Cádiz, España.</span>
 			</h2>
 
-			<ul>
-
-			</ul>
+			<nav class="flex gap-x-2">
+				<SocialPill href="https://www.linkedin.com/in/federico-segundo-molina-roldan-256191159/">
+					<LinkedInIcon class="w-6 h-6 fill-white"/>
+						LinkedIn
+				</SocialPill>
+				<SocialPill href="https://www.linkedin.com/in/federico-segundo-molina-roldan-256191159/">
+					<GithubIcon class="w-6 h-6 fill-white"/>
+						Github
+				</SocialPill>
+			</nav>
 		</section>
 	</main>
 </Layout>
