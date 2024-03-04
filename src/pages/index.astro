@@ -1,59 +1,81 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Badge from '../components/Badge.astro';
+import SectionContainer from '../components/SectionContainer.astro';
 import SocialPill from '../components/SocialPill.astro';
 import LinkedInIcon from '../components/icons/Linkedin.astro';
 import GithubIcon from '../components/icons/Github.astro';
-const linkedIn = "";
-const userName = "Fede";
-const yearInit = 2006;
-const actualYear = 2024;
+import MailIcon from '../components/icons/Mail.astro';
+import BriefcaseIcon from '../components/icons/Briefcase.astro';
+import Experience from '../components/Experience.astro';
 
-const yearExp = actualYear - yearInit;
+const linkedIn = "https://www.linkedin.com/in/federico-segundo-molina-roldan-256191159/";
 
 ---
 
-<Layout title="Bienvenido a mi Porfolio">
+<Layout 
+	title="Porfolio de Ainus64 - Desarrollador y Programador Web en Linux"
+	description="Contrata a Ainus64 como programador web, Fullstack Web Developer o aministrador de sistemas Linux."
+	>
 	<main>
-		<section class="w-full lg:w-[740px] mx-auto py-44 text-white">
-			<!--[clip-path:polygon(0%_0%,_100%_0%,_99%_80%,_76%_80%,_75%_100%,_50%_80%,_0_80%)] -->
-			
-			<h1 class="text-4xl font-bold flex flex-row gap-x-4 pb-10"
-				>
-				<img 
-			class="rounded-full w-24 mb-4"
-			src="/img/photo.jpg" 
-			alt=""
-			>Ey,
-				<span 
-					class="bg-gradient-to-r from-cyan-400 via-indigo-200 to-purple-400 inline-block text-transparent bg-clip-text "
-					>soy {userName} 
-				</span>
-				<a 
-					href={linkedIn} 
-					target="_blank"
-					rel="noopener"
-					class="flex justify-center items-center"
-					>
-					<Badge>Disponible para trabajar</Badge>
-				<a/>
+		<SectionContainer class="py-44 pb-12">
+			<h1 
+				class="text-4xl font-bold flex flex-row gap-x-4 pb-10 items-center"
+				><img 
+				class="rounded-full w-24 mb-4"
+				src="/img/photo.jpg" 
+				alt="Fotografía del programador"
+				>Ey, soy <span 
+						class="bg-gradient-to-r from-white via-cyan-300 to-purple-500 inline-block text-transparent bg-clip-text "
+						>Ainus64 
+					</span>
+					<a 
+						href={linkedIn} 
+						target="_blank"
+						rel="noopener"
+						class="flex justify-center items-center"
+						>
+						<Badge>Disponible para trabajar</Badge>
+					<a/>
 			</h1>
 			
-			<h2 class="text-2xl text-wrap">
-				<span class="">+15 años de experiencia con GNU/Linux.</span> <span class="text-bold bg-gradient-to-r from-cyan-400 via-indigo-200 to-purple-400 inline-block text-transparent bg-clip-text">Iniciando como Web Developer.</span><span class=""> De Jerez de la Frontera, Cádiz, España.</span>
+			<h2 
+				class="text-2xl text-wrap"
+				><span 
+					>+15 años de experiencia con GNU/Linux.
+				</span> 
+				<span 
+					class="text-bold bg-gradient-to-r from-cyan-400 via-indigo-200 to-purple-400 inline-block text-transparent bg-clip-text"
+					>Iniciando como Web Developer.
+				</span>
+				<span 
+					> De Jerez de la Frontera, Cádiz, España.
+				</span>
 			</h2>
 			
-			<nav class="flex gap-x-2 py-3">
-				<SocialPill href="https://www.linkedin.com/in/federico-segundo-molina-roldan-256191159/">
-					<LinkedInIcon class="w-6 h-6 fill-white"/>
+			<nav 
+				class="flex gap-x-2 py-3">
+				<SocialPill href={linkedIn}>
+					<LinkedInIcon class="size-6 fill-white"/>
 						LinkedIn
 				</SocialPill>
 				<SocialPill href="https://github.com/ainus64">
-					<GithubIcon class="w-6 h-6 fill-white"/>
+					<GithubIcon class="size-6 fill-white"/>
 						Github
 				</SocialPill>
+				<SocialPill href="https://github.com/ainus64">
+					<MailIcon class="size-6 fill-white"/>
+						miEmail@gmail.com
+				</SocialPill>
 			</nav>
-		</section>
+		</SectionContainer>
+
+		<SectionContainer class="hidden">
+			<h2 class="text-2xl font-bold text-white py-2 flex gap-x-2">
+				<BriefcaseIcon class="size-6"/>
+				Experiencia Laboral</h2>
+			<Experience class="flex justify-center items-center"/>
+		</SectionContainer>
 	</main>
 </Layout>
 
